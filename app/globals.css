@@ -1,0 +1,170 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color scheme for mystical GLH Resonance Engine theme */
+  --background: oklch(1 0 0); /* #ffffff - white background */
+  --foreground: oklch(0.205 0 0); /* #1f2937 - dark gray text */
+  --card: oklch(0.97 0.005 240); /* #f1f5f9 - light gray cards */
+  --card-foreground: oklch(0.205 0 0); /* #1f2937 - dark text on cards */
+  --popover: oklch(1 0 0); /* #ffffff - white popovers */
+  --popover-foreground: oklch(0.205 0 0); /* #1f2937 - dark text on popovers */
+  --primary: oklch(0.205 0 0); /* #1f2937 - primary dark gray */
+  --primary-foreground: oklch(1 0 0); /* #ffffff - white text on primary */
+  --secondary: oklch(0.646 0.222 280); /* #8b5cf6 - mystical purple */
+  --secondary-foreground: oklch(1 0 0); /* #ffffff - white text on secondary */
+  --muted: oklch(0.556 0.012 240); /* #6b7280 - muted gray */
+  --muted-foreground: oklch(1 0 0); /* #ffffff - white text on muted */
+  --accent: oklch(0.646 0.222 280); /* #8b5cf6 - mystical purple accent */
+  --accent-foreground: oklch(1 0 0); /* #ffffff - white text on accent */
+  --destructive: oklch(0.577 0.245 27.325); /* Orange for destructive actions */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.439 0.012 240); /* #475569 - border color */
+  --input: oklch(1 0 0); /* #ffffff - white input backgrounds */
+  --ring: oklch(0.646 0.222 280); /* #8b5cf6 - purple focus rings */
+  --chart-1: oklch(0.646 0.222 160); /* #10b981 - emerald for charts */
+  --chart-2: oklch(0.6 0.18 160); /* #059669 - darker emerald */
+  --chart-3: oklch(0.577 0.245 27.325); /* #ea580c - orange */
+  --chart-4: oklch(0.205 0 0); /* #1f2937 - dark gray */
+  --chart-5: oklch(0.646 0.222 280); /* #8b5cf6 - purple */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.97 0.005 240); /* #f1f5f9 - light gray sidebar */
+  --sidebar-foreground: oklch(0.205 0 0); /* #1f2937 - dark text in sidebar */
+  --sidebar-primary: oklch(0.646 0.222 280); /* #8b5cf6 - purple highlights */
+  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff - white text */
+  --sidebar-accent: oklch(0.646 0.222 160); /* #10b981 - emerald accents */
+  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff - white text */
+  --sidebar-border: oklch(0.439 0.012 240); /* #475569 - sidebar borders */
+  --sidebar-ring: oklch(0.646 0.222 280); /* #8b5cf6 - purple focus rings */
+}
+
+.dark {
+  /* Dark mode colors for mystical theme */
+  --background: oklch(0.145 0 0); /* Dark background */
+  --foreground: oklch(0.985 0 0); /* Light text */
+  --card: oklch(0.205 0 0); /* Dark cards */
+  --card-foreground: oklch(0.985 0 0); /* Light text on cards */
+  --popover: oklch(0.145 0 0); /* Dark popovers */
+  --popover-foreground: oklch(0.985 0 0); /* Light text on popovers */
+  --primary: oklch(0.985 0 0); /* Light primary */
+  --primary-foreground: oklch(0.205 0 0); /* Dark text on primary */
+  --secondary: oklch(0.646 0.222 280); /* Purple secondary */
+  --secondary-foreground: oklch(1 0 0); /* White text on secondary */
+  --muted: oklch(0.269 0 0); /* Dark muted */
+  --muted-foreground: oklch(0.708 0 0); /* Light muted text */
+  --accent: oklch(0.646 0.222 280); /* Purple accent */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --destructive: oklch(0.396 0.141 25.723); /* Dark destructive */
+  --destructive-foreground: oklch(0.637 0.237 25.331); /* Light destructive text */
+  --border: oklch(0.269 0 0); /* Dark borders */
+  --input: oklch(0.269 0 0); /* Dark inputs */
+  --ring: oklch(0.646 0.222 280); /* Purple focus rings */
+  --chart-1: oklch(0.646 0.222 160); /* Emerald charts */
+  --chart-2: oklch(0.6 0.18 160); /* Darker emerald */
+  --chart-3: oklch(0.769 0.188 70.08); /* Orange charts */
+  --chart-4: oklch(0.627 0.265 303.9); /* Purple charts */
+  --chart-5: oklch(0.645 0.246 16.439); /* Red charts */
+  --sidebar: oklch(0.205 0 0); /* Dark sidebar */
+  --sidebar-foreground: oklch(0.985 0 0); /* Light sidebar text */
+  --sidebar-primary: oklch(0.646 0.222 280); /* Purple sidebar primary */
+  --sidebar-primary-foreground: oklch(0.985 0 0); /* Light text */
+  --sidebar-accent: oklch(0.646 0.222 160); /* Emerald sidebar accent */
+  --sidebar-accent-foreground: oklch(0.985 0 0); /* Light text */
+  --sidebar-border: oklch(0.269 0 0); /* Dark sidebar borders */
+  --sidebar-ring: oklch(0.646 0.222 280); /* Purple focus rings */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added mystical animations and effects */
+@keyframes resonance-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes ley-line-flow {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes glyph-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.resonance-pulse {
+  animation: resonance-pulse 2s ease-in-out infinite;
+}
+
+.ley-line-flow {
+  animation: ley-line-flow 3s linear infinite;
+}
+
+.glyph-rotate {
+  animation: glyph-rotate 20s linear infinite;
+}
